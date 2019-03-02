@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<body>
+    <h1 align="center">注册信息</h1>
+    <hr color="red">
+    <form><table align="center" width="50%" bgcolor="#e6e6fa">
+
+        <tr>
+            <td>姓名:</td>
+            <td><input type="text" name="usernmae" maxlength="6" placeholder="请输入姓名"></td>
+        </tr>
+
+        <tr>
+            <td>邮箱:</td>
+            <td><input type="text" name="email" maxlength="20" placeholder="请输入邮箱"></td>
+        </tr>
+
+        <tr>
+            <td>密码:</td>
+            <td><input type="password" name="paw"  placeholder="请输入密码"></td>
+        </tr>
+
+        <tr>
+            <td>确认密码:</td>
+            <td><input type="password" name="paw" maxlength="20" placeholder="请重新输入密码"></td>
+        </tr>
+
+        <tr>
+            <td>上传照片:</td>
+            <td><input type="file"></td>
+        </tr>
+
+        <tr>
+            <td>性别:</td>
+            <td>男:<input type="radio" name="sex1">
+                女:<input type="radio" name="sex1">
+            </td>
+        </tr>
+
+        <tr>
+            <td>爱好:</td>
+            <td>
+                读书<input type="checkbox" name="dx1" value="read">
+                跳舞<input type="checkbox" name="dx1" value="dance">
+                唱歌<input type="checkbox" name="dx1" value="sing">
+                敲代码<input type="checkbox" name="dx1" value="code">
+            </td>
+        </tr>
+
+        <tr>
+            <td>城市:</td>
+            <td>
+                <select size="3">
+                    <optgroup label="华北">
+                    <option value="beijing">北京</option>
+                    <option value="tianjin">天津</option>
+                    </optgroup>
+                    <optgroup label="华南">
+                    <option value="hunan">湖南 </option>
+                    <option value="yunnan">云南 </option>
+                    </optgroup>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp</td>
+            <td>
+                <input type="Button" value="来点我">
+                <input type="reset" value="重置">
+                <input type="Submit" value="提交">
+            </td>
+        </tr>
+
+
+
+
+
+
+    </table></form>
+</body>
+</html>

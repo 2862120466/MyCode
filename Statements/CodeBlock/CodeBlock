@@ -1,0 +1,19 @@
+代码块是一组语句，可在满足条件时执行（if语句），可执行多次（循环），
+等等。代码块是 通过缩进代码（即在前面加空格）来创建的。
+
+在同一个代码块中，各行代码的缩进量必须相同。
+下面的伪代码（并非真正的Python代码） 演示了如何缩进：
+
+ this is a line
+ this is another line:
+     this is another block
+     continuing the same block
+     the last line of this block
+ phew, there we escaped the inner block
+
+ 在很多语言中，都使用一个特殊的单词或字符（如begin或{）来标识代码块的
+ 起始位置，并 使用另一个特殊的单词或字符（如end或}）来标识结束位置。
+ 在Python中，使用冒号（:）指出 接下来是一个代码块，并将该代码块中的
+ 每行代码都缩进相同的程度。发现缩进量与之前相同时， 你就知道当前代码
+ 块到此结束了。（很多用于编程的编辑器和IDE知道如何缩进代码块，可帮助
+ 你 轻松地正确缩进。）

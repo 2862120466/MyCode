@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圣杯布局</title>
+    <link rel="stylesheet" href="">
+    <style>
+        *{margin:0;padding:0;text-align:center;}
+        body{min-width: 700px;}
+        .Center,.Left,.Right{
+            float:left;
+            position:relative;  /*当position属性值为relative时，对象原来占有的位置保留，其后面的对象按原来文档流仍然保持原来的位置。*/
+            min-height:300px;
+        }
+
+        .Center{  /*占据main块的元素内容，是第一渲染区域*/
+            width:100%;
+            background: lavender;
+            word-break: break-all;
+        }
+        .main {
+            margin: 0; /*清除外边距使Content容器占据整个屏幕*/
+            padding: 0 200px 0 200px;
+            clear: both;
+        }
+        .Left{
+            width: 200px;
+            background: aqua;
+            margin-left: -100%;  /*移动到main元素内容的原点*/
+            left: -200px;  /*移动到main内边距内*/
+        }
+        .Right{
+            width: 200px;
+            background: aqua;
+            margin-left: -200px;
+            right: -200px;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="Center"><p>This is center</p></div>
+    <div class="Left">This is left</div>
+    <div class="Right">This is right</div>
+
+</div>
+</body>
+</html>

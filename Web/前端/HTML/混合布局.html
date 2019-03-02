@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>混合布局</title>
+    <style>
+        body{margin: 0;padding: 0;}
+        div{
+            width:80%;
+            height:1000px;
+            text-align:center;
+            background: gray;
+            margin:auto;
+            overflow:hidden; /*处理float溢出*/
+        }
+
+        .Head{width:100%;height:10%;background: red}
+
+        .Left{
+            width:10%;
+            height:80%;
+            background: antiquewhite;
+            float:left;
+        }
+
+        .Right{
+            width:90%;
+            height:80%;
+            background: lavender;
+            float:right;
+        }
+
+        .Foot{
+            width:100%;
+            height:10%;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="Head">This is head</div>
+        <div class="Left">This is body left</div>
+        <div class="Right">This is body right</div>
+        <div class="Foot">This is foot</div>
+    </div>
+</body>
+</html>

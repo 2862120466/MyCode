@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.js"></script>
+<script>
+test = document.getElementById("test");
+
+test.onclick = function () {
+    appendText();
+}
+
+function appendText()
+{
+$("body").append("111111","2222","33333");        // 追加新元素
+}
+
+
+</script>
+</head>
+<body>
+
+<p>This is a paragraph.</p>
+<button id='test' >追加文本</button>
+
+</body>
+</html>

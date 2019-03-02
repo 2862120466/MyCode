@@ -1,0 +1,17 @@
+如果有两个模块，它们都包含函数open，该如何办呢？你可使用第一种方式导
+入这两个模块，并像下面这样调用函数：
+ module1.open(...)
+ module2.open(...)
+ 还有一种办法：在语句末尾添加as子句并指定别名。下面是一个导入整个模块
+ 并给它指定 别名的例子：
+ >>> import math as foobar
+ >>> foobar.sqrt(4) 2.0
+
+
+ 下面是一个导入特定函数并给它指定别名的例子：
+ >>> from math import sqrt as foobar
+ >>> foobar(4) 2.0
+
+ 对于前面的函数open，可像下面这样导入它们：
+ from module1 import open as open1
+ from module2 import open as open2
