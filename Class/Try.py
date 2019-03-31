@@ -1,9 +1,17 @@
-def fab(max):
-    sum = max + 5
-    return sum
+class TestPropety:
+    def __init__(self):
+        self.width = 0
+        self.height = 0
+    def getsize(self):
+        return self.width,self.height
 
-f = fab(5)
-print(f)
-f2 = fab(6)
-print(f2,f)
+    def setsize(self,size):
+        self.width,self.height = size
 
+    size = property(getsize,setsize)
+
+t = TestPropety()
+
+t.size = 5,10
+
+print(t.width,t.height)

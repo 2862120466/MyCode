@@ -8,9 +8,9 @@ class Rectangle:
     def get_size(self):
         return self.width, self.height
 
-    size = property(get_size, set_size)
+    size = property(get_size, set_size)#size也是一个属性，getsize取得值，取得得值交给setsize设置
     """
-    隐藏存取方法，让所有的属性看起来都 一样。通过存取方法定义的属性通常称
+    隐藏存取方法，让所有的属性看起来都一样。通过存取方法定义的属性通常称
     为特性（property）。
     property()第一个参数是读取参数，第二个参数是写存参数，第三个参数可选，
     为删除属性的方法，第四个参数可选，指定一个字符串

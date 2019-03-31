@@ -60,6 +60,10 @@ class HeroPlane(Plane):
         self.x -= 10
     def moveRight(self):
         self.x += 10
+    def moveUp(self):
+        self.y -= 10
+    def moveDown(self):
+        self.y += 10
 
 
 class EnemyPlane(Plane):
@@ -126,7 +130,7 @@ class PublicBullet(Base):
 if __name__ == "__main__":
 
     #1. 创建一个窗口，用来显示内容
-    screen = pygame.display.set_mode((480,890),0,32)
+    screen = pygame.display.set_mode((480,590),0,32)
 
     #2. 创建一个和窗口大小的图片，用来充当背景
     background = pygame.image.load("./feiji/background.png").convert()
@@ -162,10 +166,16 @@ if __name__ == "__main__":
                 elif event.key == K_d or event.key == K_RIGHT:
                     print('right')
                     heroPlane.moveRight()
+                elif event.key == K_b or event.key == K_UP:
+                    print('up')
+                    heroPlane.moveUp()
+                elif event.key == K_c or event.key == K_DOWN:
+                    print('down')
+                    heroPlane.moveDown()
                 elif event.key == K_SPACE:
                     print("space")
                     heroPlane.sheBullet()
 
-        time.sleep(0.01)
+        time.sleep(0.002)
 
         pygame.display.update()

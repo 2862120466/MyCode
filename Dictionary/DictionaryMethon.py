@@ -48,7 +48,7 @@ print(d.popitem())
 print(d)
 
 #方法setdefault有点像get，因为它也获取与指定键相关联的值，但除此之外，setdefault 还在字典不包含指定的键时，在字典中添加指定的键值对。
-print()
+print('setdefault')
 d = {}
 d.setdefault('name','N/A')
 print(d.setdefault('name','N/A'))

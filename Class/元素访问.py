@@ -27,7 +27,7 @@ def check_index(key):
     if key < 0: raise IndexError
 
 
-
+#给序列计算指定起始位置和步长后的值（计算一次）
 class ArithmeticSequence:
    def __init__(self, start=0, step=1):
        """
@@ -55,11 +55,12 @@ class ArithmeticSequence:
          修改算术序列中的元素
        """
        check_index(key)
+       print("seted")
+
        self.changed[key] = value  # 存储修改后的值
 
 
 
 s = ArithmeticSequence(1, 2)
-print(s[3])
-s[3] = 0
-print(s[3])
+print(s[4])
+
