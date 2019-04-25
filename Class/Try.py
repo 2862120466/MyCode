@@ -1,17 +1,6 @@
-class TestPropety:
-    def __init__(self):
-        self.width = 0
-        self.height = 0
-    def getsize(self):
-        return self.width,self.height
+import 描述器
 
-    def setsize(self,size):
-        self.width,self.height = size
+a = 描述器.Person()
 
-    size = property(getsize,setsize)
-
-t = TestPropety()
-
-t.size = 5,10
-
-print(t.width,t.height)
+a.age = 1
+print(a.age)

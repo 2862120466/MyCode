@@ -3,7 +3,7 @@ def greet():
     print("Hello,world")
 def test():
     greet()
-if __name__ == '__main__':test()  #?
+if __name__ == '__main__':test()
 
 
 

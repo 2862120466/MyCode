@@ -1,18 +1,23 @@
-from socketserver import TCPServer,StreamRequestHandler,ThreadingMixIn
+import socketserver
 
-#利用ThreadingMixIn类实现线程化，达到多个客户端同时连接
-class Server(ThreadingMixIn,TCPServer):pass
 
-#StreamRequestHandler负责在使用完连接后将其关闭
-class Handler(StreamRequestHandler):
+class MyServer(socketserver.BaseRequestHandler):
 
     def handle(self):
-        #获取客户端套接字
-        addr = self.request.getpeername()
-        print('Got connection from',addr)
-        #想客户端发送信息
-        self.wfile.write('Thank you for your connecting'.encode())
+        # print(self.request,self.client_address,self.server)
+        conn = self.request
+        conn.sendall('欢迎致电 10086，请输入1xxx,0转人工服务.'.encode())
+        Flag = True
+        while Flag:
+            data = conn.recv(1024)
+            if data == 'exit':
+                Flag = False
+            elif data == b'0':
+                conn.sendall('通过可能会被录音.balabala一大推'.encode())
+            else:
+                conn.sendall('请重新输入.'.encode())
 
-#绑定IP+协议+端口，用来唯一标识一个进程
-server = TCPServer(('127.0.0.1',1234),Handler)
-server.serve_forever()
+
+if __name__ == '__main__':
+    server = socketserver.ThreadingTCPServer(('127.0.0.1', 8009), MyServer)
+    server.serve_forever()
