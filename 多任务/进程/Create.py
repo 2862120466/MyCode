@@ -1,3 +1,5 @@
+''' 进程不共享内存空间 '''
+
 import time,multiprocessing
 
 def test_1(name):

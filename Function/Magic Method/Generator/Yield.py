@@ -1,14 +1,20 @@
 def fab(max):
     n, a, b = 0, 0, 1
-    while n < max:
-        yield b  #把 print b 改为了 yield b，就在保持简洁性的同时获得了 iterable 的效果。
-        # print b
+    for i in range(max):
+        yield b  # 把 print b 改为了 yield b，就在保持简洁性的同时获得了 iterable 的效果。
+        print(b)
         a, b = b, a + b
         n = n + 1
 
+
+# f = fab(5)
+# print(list(f))
+
 f = fab(5)  #可以手动调用 fab(5) 的 next() 方法
-print(next(f))
+# next()的返回值是yield表达式后面的值,也就是生成器下一个返回值
+print('获取首个返回值:%d' % next(f))
 print(list(f))
+
 
 
 """
