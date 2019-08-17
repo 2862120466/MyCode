@@ -20,6 +20,8 @@ print(dc)
 
 #方法fromkeys创建一个新字典，其中包含指定的键，且每个键对应的值都是None
 #如果你不想使用默认值None，可提供特定的值。
+# 如果fromkeys第二个参数是可变数据类型，所有的key用的都是同一个列表，改变其中一个(改变这个列表本身，而不是key指向另一个列表)。 另一个也跟着改变
+# 如果fromkeys第二个参数是不可变数据类型，则不会跟着一起改变
 print()
 print( {}.fromkeys(['name', 'age']) )
 print( dict.fromkeys(['name', 'age'], '(unknown)') )
