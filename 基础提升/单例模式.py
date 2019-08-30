@@ -79,7 +79,7 @@ class A:
 
 if __name__ == "__main__":
     print(Singleton.__instancecheck__(singleton))  # output：True
-    print(Singleton.__instancecheck__(singleton_false))  # output：False
+    print(Singleton.__instancecheck__(singleton_false))  # output：True
 
     singleton.output_name()  # output：singleton_false
     singleton_false.output_name() # output：singleton_false

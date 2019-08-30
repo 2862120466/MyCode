@@ -15,13 +15,13 @@ print(id(i))  # 1564271392
 
 
 '''
-对于可变类型对象 i+=1不会改变内存地址
+对于可变类型对象 i+=1不会改变内存地址, i = i+1会改变内存地址
 '''
 list = [1,2,3]
 print(id(list))  # 78555136
 list += [4]
 print(id(list))  # 78555136
 list = list + [5]
-print(id(list))  # 78555496
+print(id(list))  # 78555497
 
 

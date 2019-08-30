@@ -7,7 +7,6 @@ def call_back(event):
 
 top.bind( '<Button-1>', call_back )
 
-help(Tk.bind)
 
 mainloop()
 

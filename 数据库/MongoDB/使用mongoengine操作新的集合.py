@@ -44,7 +44,7 @@ class Operations():
         return Student.objects.first()
 
     def get_more(self):
-        return Student.objects.all()
+        return Student.objects.filter(age__gt=18)
 
     def get_one_form_name(self, name):
         return Student.objects.filter(name = name).first()
@@ -71,9 +71,9 @@ if __name__ == '__main__':
     # stu = o.get_one()
     # print(dir(stu))
 
-    # stu = o.get_more()
-    # [print(data.name, data.grades[1].subject) for data in stu]
+    stu = o.get_more()
+    [print(data.name, data.grades[1].subject, data.grades[1].score) for data in stu]
 
     # print(o.get_one_form_name('wcc').age)
 
-    o.update_more()
+    # o.update_more()

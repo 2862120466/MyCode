@@ -1,19 +1,20 @@
 def decorator(func):
     def inner(*args,**kwargs):
-        print('this is inner')
+        print('The decorator is declared ')
         ret = func(*args,**kwargs)
         return ret
     return inner
 
-@decorator
+@decorator  # output:The decorator is declared
 def have_return(a):
     return a
 
-@decorator
+@decorator  # output:The decorator is declared
 def no_return(b):
     print(b)
 
-ret1 = have_return(1234)
-ret2 = no_return(6789)
+ret1 = have_return('a')
+ret2 = no_return('b')  # output:b
 
-print(ret1,ret2)
+print(ret1)  # output:a
+print(ret2)  # output:None
