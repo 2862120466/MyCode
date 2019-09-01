@@ -9,7 +9,8 @@ def simple_coroutine():
 
 
 sc = simple_coroutine()
-sc.send(None)
+x_recv = sc.send(None)
+print(x_recv)
 
 for i in range(3):
     y_recv = sc.send('wcc')
