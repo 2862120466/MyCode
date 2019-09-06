@@ -26,3 +26,60 @@ __new__会在创建对象时被调用。__init__在创建对象后被调用
 利用python模块实现单例
 '''
 
+class SingletonModule():
+    pass
+
+singleton1 = SingletonModule()
+# from 单例模式 import singleton1
+
+
+'''
+利用静态变量方法实现单例
+'''
+class Singleton(object):
+    '''
+    单例类
+    '''
+    def __new__(cls,a):
+        '''
+        如果已经存在一个实例对象，则返回一开始创建的对象，不会再创建一个新对象
+        :param hasattr: hasattr返回对象是否具有具有给定名称的属性。
+        :return: 一个实例对象
+        '''
+
+        if not hasattr(cls, '_instance'):
+            cls._instance = object.__new__(cls)
+        return cls._instance
+
+    def __init__(self,a):
+        self.a = a
+
+    def output_name(self):
+        print(self.a)
+
+
+singleton = Singleton("singleton")
+singleton_false = Singleton("singleton_false")  # 这里看似创建了两个对象，实际上他们是一个相同的对象
+
+
+'''
+利用装饰器实现单例模式
+'''
+def singleton_decorator(cls, *args, **kw):
+    instance = {}
+    def _singleton(args):
+        if cls not in instance:
+            instance[cls] = cls(*args, **kw)
+        return instance[cls]
+    return _singleton
+
+@singleton_decorator
+class A:
+    pass
+
+if __name__ == "__main__":
+    print(Singleton.__instancecheck__(singleton))  # output：True
+    print(Singleton.__instancecheck__(singleton_false))  # output：True
+
+    singleton.output_name()  # output：singleton_false
+    singleton_false.output_name() # output：singleton_false
